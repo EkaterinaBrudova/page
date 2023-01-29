@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap" rel="stylesheet">
+	<title>Document</title>
+	<script>
+		window.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".open_menu").addEventListener("click", function () {
+        document.querySelector(".mob_menu").classList.add("mob_menu_visible");
+    });
+    document.body.addEventListener("click", function (e) {
+        if (!e.target.closest(".open_menu")) {
+            document.querySelector(".mob_menu").classList.remove("mob_menu_visible");
+        }
+    });
+		});
+
+	</script>
+
+	<style>
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+		}
+
+		.content-block {
+			max-width: 940px;
+			margin: 0 auto;
+			padding: 10px;
+			text-align: center;
+		}		
+		.content-block h2 {
+			font-size: 34px;
+		}
+
+
+		header.content-block{
+			padding-top:50px;
+			padding-bottom:50px;
+			text-align: center;
+			font-size: 18px;
+		}
+
+		header nav ul {
+			display: flex;
+			list-style: none;
+			font-weight: bold;
+			justify-content: space-between;
+			margin-left: -42px;
+			margin-bottom: 32px;
+		}
+
+		header .nav-border {
+			border-top: 1px solid #828282
+		}
+
+		main .content-row:first-child .content-block {
+			padding-top: 5px;
+    		padding-bottom: 100px
+		}
+
+		main .content-row:nth-child(even) {
+			background: #F6F6F6;
+		}
+
+		.my-info {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			
+		}
+		.my-info p{
+			font-size: 18px;
+		}
+
+		.my-info h1{
+			font-size: 47.3px;
+			text-align: justify;
+		}
+
+		.language-select{
+			rotate: 270deg;
+			margin-right: -32px;
+		}
+
+		.language-select [href]{
+			text-decoration: none;
+		}
+
+		.about-description{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			font-size: 18px;
+			margin-bottom: 70px;
+			margin-top: 18px;
+		} 
+		
+		.about-description p:nth-child(1){
+			max-width: 486px;
+		}
+				
+		.about-description p:nth-child(2){
+			max-width: 400px;
+		}
+				
+		.about-description p:nth-child(3){
+			max-width: 340px;
+		}
+
+		.content-block-skills {
+			display: flex;
+			list-style: none;
+			font-weight: bold;
+			justify-content: space-between;
+			margin-top: 20px;
+			margin-bottom: 91px;
+			color: #828282;
+			font-size: 14px;
+			text-align: center;
+			vertical-align: top;
+			flex-wrap:wrap;
+			gap: 50px;
+			justify-content:center;
+
+		}
+
+		.skills-properties h2 {
+			margin-top: 91px;
+			
+		}
+		.skills-properties p {
+			margin-top: 70px;
+			margin-bottom: 70px;
+		}
+
+		.content-block-portfolio {
+			color: #070707;
+    		margin-top: 112px;
+		}
+
+		.portfolio-img img {
+			max-width: 100%;
+			height: auto;
+		}
+		.main-img img{
+			max-width: 100%;
+			height: auto;
+		}
+
+		.portfolio-img img:hover{
+			box-shadow: 0 0 6px 2px rgb(0 0 0 / 40%);
+		}
+		.main-img img:hover{
+			box-shadow: 0 0 6px 2px rgb(0 0 0 / 40%);
+		}
+
+		.content-block-portfolio h2{
+			
+			margin-bottom: 42px;
+		}
+
+		.content-block-portfolio p{
+			margin-bottom: 100px;
+		}
+
+		[href] {
+			color: #070707;
+			text-decoration: none;
+		}
+
+		[href], li:hover{
+		text-decoration: underline;
+		}
+
+		.button {
+			background-color: #070707;
+			font-size: 18px;
+			padding: 5px;
+			border-radius: 30px;
+			color: #F6F6F6;
+			height: 42px;
+			width: 180px;
+			margin-bottom: 92px;
+		}
+		
+		.content-block-contacts {
+			display: flex;
+			list-style: none;
+			font-weight: bold;
+			justify-content: space-evenly;
+			margin-top: 20px;
+			margin-bottom: 46px;
+			flex-wrap:wrap;
+			gap: 50px;
+			justify-content:center;
+		}
+
+		.contacts-properties h2{
+			margin-top: 114px;
+			margin-bottom: 20px;
+			
+		}
+
+		.contacts-properties p{
+			margin-bottom: 29.6px;
+		}
+		
+		.vertical-list {
+			display: flex;
+			gap: 40px;
+			flex-direction: column;
+			list-style: none;
+			margin: 0;
+		}
+
+		.horizontal-list {
+			display: flex;
+			list-style: none;
+			margin: 0;
+			margin-top: 33px;
+			margin-bottom: 31px;
+			margin-left: -40px;
+
+		}
+
+
+		/* menu */
+		.mobile-header {
+ 			display: none;
+			justify-content: space-between;
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+
+		.mobile-header h1{
+			margin: 0;
+			margin-left: 5px;
+		}	
+
+		.burger-btn {
+			background: 0;
+			border: none;
+			padding: 5px;
+			cursor: pointer;
+			width: 50px;
+			height: 50px;
+			border-radius: 50px;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			transition: all 200ms;
+		}
+
+		.mob_menu {
+			position: fixed;
+			top: 0;
+			right: 0;
+			width: 330px;
+			min-height: 330px;
+			height: auto;
+			background: #fff;
+			z-index: 3;
+			display: flex;
+			padding: 20px 10px 60px 30px;
+			justify-content: space-between;
+			box-shadow: 0 0 15px 3px rgb(0 0 0 / 40%);
+		}
+
+		.mobile-menu .column-right {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: end;
+		}
+
+		.open_menu {
+			background: 0;
+			border: none;
+			padding: 5px;
+			cursor: pointer;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			transition: all 200ms;
+		}
+		
+		.open_menu:hover {
+			background-color: #828282;
+		}
+
+		.open_menu:active {
+			background-color: #5e5c5c;
+		}
+
+		
+		 /* media */
+
+		
+		@media (max-width: 700px){
+			.mobile-header{
+				display: flex;
+			}
+			.desktop-header {
+				display: none;
+			}
+			.my-info h1{
+				display: none;
+			}
+
+			.my-info.language-select{
+				display: none;
+			}
+			.home_paragraph {
+				margin-bottom: 0;
+				text-align: left;
+				padding-bottom: 37px;
+			}
+			/* .main-img img {
+				display: none;
+			}
+
+			.main-img-mob img {
+				width: 316.5px;
+				height: 478px;
+			} */
+		}
+			
+
+			
+
+	</style>
+</head>
+
+<body>
+	<header class="desktop-header">
+		<nav class="content-block">
+			<ul class="horizontal-list">
+			    <li>Home</li>
+                <li style="color: #828282;">About</li>
+                <li style="color: #828282;">Skills</li>
+                <li style="color: #828282;">Portfolio</li>
+                <li style="color: #828282;">Contact</li>
+			</ul>
+			<div class="nav-border"></div>
+		</nav>
+	</header>
+
+	
+	<header class="mobile-header">
+		<h1>Denis<br>Novik</h1>
+		<button class="open-menu burger-btn">
+			<img src="image\burger.svg">
+		</button>
+	</header>
+	
+	<div class="mob_menu">
+			<div class="colomn-left">
+				<nav>
+					<ul class="vertical-list">
+						<li><a href="#link-home">Home</a></li>
+						<li><a href="#link-about">About</a></li>
+						<li><a href="#link-Skills">Skills</a></li>
+						<li><a href="#link-Portfolio">Portfolio</a></li>
+						<li><a href="#link-Contact"> Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="column-right">
+				<button class="close-menu burger-btn">
+					<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect x="2.68701" width="27.3715" height="3.8" transform="rotate(45 2.68701 0)" fill="#828282"/>
+						<rect x="0.831299" y="19.5566" width="27.3715" height="3.8" transform="rotate(-45 0.831299 19.5566)" fill="#828282"/>
+						</svg>
+				</button>
+				<div class="language-select">RU |<b>ENG</b></div>
+				
+			</div>
+		</div>
+
+	<main>
+		<div class="content-row">
+			<div class="content-block">
+				<div class="my-info">
+					<h1>Denis<br>Novik</h1>
+					<p class="home_paragraph">UX | UI designer <br>
+						24 years old, Minsk</p>
+
+					<div class="language-select">RU |<b>ENG</b></div>
+				</div>
+				<div class="main-img">
+                    <img src="image\denis.jpg.">
+                </div>
+				<!-- <div class="main-img-mob">
+                    <img src="image\denis_mob.jpg.">
+                </div> -->
+
+
+			</div>
+		</div>
+
+		<div class="content-row">
+			<div class="content-block">
+				<h2 style="margin-top: 120px ;">About me</h2>
+
+				<div class="about-description">
+					<p>Hi, I'm Denis – UX/UI designer from Minsk. I'm interested in design and everything
+						connected with it. </p>
+					<p>I'm studying at courses "Web and mobile design interfaces" in IT-Academy. </p>
+					<p>Ready to implement excellent projects with wonderful people.</p>
+				</div>
+			</div>
+		</div>
+		<div class="content-row">
+			<div class="content-block">
+				<div class="skills-properties">
+					<h2>Skills</h2>
+					<p>I work in such programs as</p>
+				</div>
+				<div class="content-block-skills">
+					<div>
+						<img src="image\photoshop.svg">
+						<p>Adobe<br>
+							Photoshop</p>
+						<img src="image\star_filled.svg">
+						<img src="image\star_filled.svg">
+						<img src="image\star_filled.svg">
+						<img src="image\star_filled.svg">
+						<img src="image\start_empty.svg">
+					</div>
+					<div>
+						<img src="image\illustrator.svg">
+						<p>Adobe<br>
+						Illustrator</p>
+						<img src="image\star_filled.svg">
+						<img src="image\star_filled.svg">
+						<img src="image\star_filled.svg">
+						<img src="image\start_empty.svg">
+						<img src="image\start_empty.svg">
+					</div>
+					<div>
+						<img src="image\after_effects.svg">
+						<p>Adobe<br>
+						After Effects</p>
+						<img src="image\star_filled.svg">
+						<img src="image\star_filled.svg">
+						<img src="image\star_filled.svg">
+						<img src="image\star_filled.svg">
+						<img src="image\start_empty.svg">
+					</div>
+					<div>
+						<img src="image\figma.svg">
+						<p style="margin-bottom: 32px;">Figma</p>
+						<img src="image\star_filled.svg">
+						<img src="image\star_filled.svg">
+						<img src="image\star_filled.svg">
+						<img src="image\star_filled.svg">
+						<img src="image\start_empty.svg">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content-row">
+			<div class="content-block">
+				<div class="content-block-portfolio">
+					<h2>Portfolio</h2>
+					<div class="portfolio_discription">
+						<div class="portfolio-img">
+							<a href="#portfolio">
+								<img src="image\portfolio.jpg">
+							</a>
+						</div>
+						<p><a href="#URL">Online fashion store - Homepage</a></p>
+
+						<div class="portfolio-img">
+							<a href="#reebok_web">
+								<img src="image\reebok_web.jpg">
+							</a>
+						</div>
+						<p><a href="#URL">Reebok Store - Concept</a> </p>
+
+						<div class="portfolio-img">
+							<a href="#braun">
+								<img src="image\braun.jpg">
+							</a>
+						</div>
+						<p><a href="#URL">Braun Landing Page - Concept</a> </p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="content-row">
+			<div class="content-block">
+				<div class="contacts-properties">
+					<h2>Contacts</h2>
+					<p>Want to know more or just chat?<br>
+						You are welcome!</p>
+				</div>
+				<button class="button">Send message</button>
+				<div class="content-block-contacts">
+					<a href="#linkedin"><img src="image\linkedin.svg"></a>
+					<a href="#instagram"><img src="image\instagram.svg"></a>
+					<a href="#behance"><img src="image\behance.svg"></a>
+					<a href="#vector"><img src="image\vector.svg"></a>
+			</div>
+				<p style="margin-bottom:123px ;">Like me on<br>
+					<a href="#url">LinkedIn</a>, 
+					<a href="#url">Instagram</a>, 
+					<a href="#url">Behance</a>,
+					<a href="#url">Dribble</a>
+				</p>
+
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>
+
+
