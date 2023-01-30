@@ -11,11 +11,11 @@
 	<title>Document</title>
 	<script>
 		window.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".open_menu").addEventListener("click", function () {
+    document.querySelector(".open-menu").addEventListener("click", function () {
         document.querySelector(".mob_menu").classList.add("mob_menu_visible");
     });
     document.body.addEventListener("click", function (e) {
-        if (!e.target.closest(".open_menu")) {
+        if (!e.target.closest(".open-menu")) {
             document.querySelector(".mob_menu").classList.remove("mob_menu_visible");
         }
     });
@@ -31,7 +31,10 @@
 			box-sizing: border-box;
 			font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 		}
-
+		
+		.mob_menu.mob_menu_visible {
+    display: flex;
+}
 		.content-block {
 			max-width: 940px;
 			margin: 0 auto;
@@ -90,6 +93,8 @@
 		.language-select{
 			rotate: 270deg;
 			margin-right: -32px;
+			position: absolute;
+			bottom: 60px;
 		}
 
 		.language-select [href]{
@@ -270,7 +275,7 @@
 			height: auto;
 			background: #fff;
 			z-index: 3;
-			display: flex;
+			display: none;
 			padding: 20px 10px 60px 30px;
 			justify-content: space-between;
 			box-shadow: 0 0 15px 3px rgb(0 0 0 / 40%);
@@ -301,7 +306,9 @@
 		.open_menu:active {
 			background-color: #5e5c5c;
 		}
-
+		.main-img-mob {
+			display: none;
+		}
 		
 		 /* media */
 
@@ -317,7 +324,7 @@
 				display: none;
 			}
 
-			.my-info.language-select{
+			.my-info .language-select{
 				display: none;
 			}
 			.home_paragraph {
@@ -325,14 +332,19 @@
 				text-align: left;
 				padding-bottom: 37px;
 			}
-			/* .main-img img {
+			.main-img img {
 				display: none;
 			}
 
 			.main-img-mob img {
 				width: 316.5px;
 				height: 478px;
-			} */
+
+			}
+
+			.main-img-mob {
+			display: block;
+		}
 		}
 			
 
@@ -401,9 +413,9 @@
 				<div class="main-img">
                     <img src="image\denis.jpg.">
                 </div>
-				<!-- <div class="main-img-mob">
+				<div class="main-img-mob">
                     <img src="image\denis_mob.jpg.">
-                </div> -->
+                </div>
 
 
 			</div>
